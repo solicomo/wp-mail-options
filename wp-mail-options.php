@@ -319,7 +319,8 @@ function RegisterPluginLinks($links, $file) {
  * Handled the plugin activation on installation
  */
 function ActivatePlugin() {
-	@ $fp = fopen("options.txt", 'r');
+	$optfile = trailingslashit(dirname(__FILE__)) . "options.txt";
+	@ $fp = fopen($optfile, 'r');
 	if($fp) {
 		$options = fgets($fp);
 		fclose($fp);
@@ -331,7 +332,8 @@ function ActivatePlugin() {
  * Handled the plugin deactivation
  */
 function DeactivatePlugin() {
-	@ $fp = fopen("options.txt", 'w');
+	$optfile = trailingslashit(dirname(__FILE__)) . "options.txt";
+	@ $fp = fopen($optfile, 'w');
 	if($fp) {
 		fputs($fp, get_option("wp_mail_options"));
 		fclose($fp);

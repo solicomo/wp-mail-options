@@ -15,46 +15,7 @@ class WPMailOptionsPage {
 function WPMailOptions_Options_Page() {
 	load_plugin_textdomain( 'wp-mail-options', false, dirname( plugin_basename( __FILE__ ) ) . "/lang" );
 	?>
-	<style type="text/css">
-		#wpmo-options h3 {
-			display: block;
-			font-size: 12px;
-			font-weight: bold;
-			line-height: 1;
-			margin: 0px;
-			padding: 7px 9px;
-			color: #464646;
-			background: #DFDFDF;
-			text-shadow: white 0px 1px 0px;
-		}
 
-		#wpmo-desc {
-			display:	block;
-			width:		95%;
-			margin-top:	10px;
-			font-size:	80%;
-		}
-
-		#wpmo-setting {
-			width:			768px;
-			margin-right:	300px;
-		}
-
-		#wpmo-about {
-			border-bottom-left-radius: 6px 6px;
-			border-bottom-right-radius: 6px 6px;
-			border-style: solid;
-			border-width: 1px;
-			border-top-left-radius: 6px 6px;
-			border-top-right-radius: 6px 6px;
-			line-height: 1;
-			margin-bottom: 20px;
-			border-color: #DFDFDF;
-			min-width: 255px;
-			position: relative;
-			width: 99.5%;
-		}
-	</style>
 	<div class="wrap">
 	<div id="wpmo-options">
 	<div id="wpmo-title"><h2>WP Mail Options</h2></div>
@@ -360,7 +321,7 @@ function WPMailOptions_Options_Page() {
 }
 
 function WPMailOptions_Menu() {
-	add_options_page('WP Mail Options Plugin', 'WP Mail Options', 10, __FILE__, array(__CLASS__,'WPMailOptions_Options_Page'));
+	add_options_page(__('WP Mail Options'), __('WP Mail Options'), 10, __FILE__, array(__CLASS__,'WPMailOptions_Options_Page'));
 }
 
 } // end of class WPMailOptions

@@ -33,6 +33,7 @@ Possibly your mail server has added a *Sender:* header or is configured to alway
 == Changelog ==
 
 = 0.1.1 =
+* Fixed that the options were saved to a wrong path (wp-admin/options.txt) instead of (wp-content/plugins/wp-mail-options/options.txt), when this plugin was deactivated.
 * Updated options page UI.
 
 = 0.1.0 =
