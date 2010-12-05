@@ -16,7 +16,7 @@ function WPMailOptions_Options_Page() {
 	load_plugin_textdomain( 'wp-mail-options', false, dirname( plugin_basename( __FILE__ ) ) . "/lang" );
 	?>
 	<style type="text/css">
-		.wpmo-options h3 {
+		#wpmo-options h3 {
 			display: block;
 			font-size: 12px;
 			font-weight: bold;
@@ -28,7 +28,7 @@ function WPMailOptions_Options_Page() {
 			text-shadow: white 0px 1px 0px;
 		}
 
-		.wpmo-desc {
+		#wpmo-desc {
 			display:	block;
 			width:		95%;
 			margin-top:	10px;
@@ -40,15 +40,7 @@ function WPMailOptions_Options_Page() {
 			margin-right:	300px;
 		}
 
-		.wpmo-inner-sidebar {
-			clear:		right;
-			display:	block;
-			float:		right;
-			position:	relative;
-			width:		280px;
-		}
-
-		.wpmo-about {
+		#wpmo-about {
 			border-bottom-left-radius: 6px 6px;
 			border-bottom-right-radius: 6px 6px;
 			border-style: solid;
@@ -64,8 +56,8 @@ function WPMailOptions_Options_Page() {
 		}
 	</style>
 	<div class="wrap">
-	<div class="wpmo-options">
-	<h2>WP Mail Options</h2>
+	<div id="wpmo-options">
+	<div id="wpmo-title"><h2>WP Mail Options</h2></div>
 	<?php
 	global $wpmo_status;
 	if($wpmo_status == 'update_success')
@@ -81,29 +73,21 @@ function WPMailOptions_Options_Page() {
 		echo $message;
 		?></p></strong></div><?php
 	} ?>
-	<div class="wpmo-desc">
+	<div id="wpmo-desc">
 	<?php _e("<p>This plugin allows you to set almost all options of emails sent by WordPress. In fact, it just simply modified the value of the PHPMailer's member variables, which is offered on the right, including their description, type, name and default vlaue following the equal sign.</p>
 <p>In most cases, this plugin replace the old value of each variable with the new value you give below; for the rest, it apends new value after the old value, for instance, To, Cc, Bcc and so on.</p>
 <p>Some options will affect others to be effective, like if \"Mailer\" be set as \"mail\" or \"sentmail\", all options about SMTP in the following will be valid.</p>
 <p>If you don't want (or know how to) set one option, you should leave it blank.</p>
 <p><b>Warning:</b> This plugin is only for advanced users. You should know exactly what effect each option will have on the behavior of PHPMailer when you use this plugin. </p>", 'wp-mail-options'); ?>
 	</div>
-	<div class="metabox-holder has-right-sidebar">
 
-	<div class="inner-sidebar">
-	<div class="wpmo-about">
-	<?php _e('<h3>About this plugin</h3>', 'wp-mail-options'); ?>
-	<ul>
-	<li><a href="http://www.cbug.org"><?php _e('Plugin URI', 'wp-mail-options'); ?></a></li>
-	<li><a href="http://www.cbug.org" target="_blank"><?php _e('Author URI', 'wp-mail-options'); ?></a></li>
-	</ul>
-	</div>
-	</div>
-
-	<div class="has-sidebar sm-padded">
-	<div id="wpmo-setting" class="has-sidebar-content">
+	<!--left-->
+	<div class="postbox-container" style="width:75%;">
+	<div class="metabox-holder">
 	<div class="meta-box-sortabless">
-	<div>
+
+	<!--setting-->
+	<div id="wpmo-setting" class="tool-box">
 	<?php $wp_mail_options = unserialize(get_option('wp_mail_options')); ?>
 	<form method="post" action="<?php echo get_bloginfo("wpurl"); ?>/wp-admin/options-general.php?page=<?php echo plugin_basename(__FILE__); ?>">
 	<input type="hidden" name="wpmo_update_options" value="Y">
@@ -341,10 +325,35 @@ function WPMailOptions_Options_Page() {
 	</p>
 	</form>
 	</div>
+	<!--settin end-->
+
+	<!--others-->
+	<!--others end-->
+
+	</div></div></div>
+	<!--left end-->
+
+	<!--right-->
+	<div class="postbox-container" style="width:21%;">
+	<div class="metabox-holder">
+	<div class="meta-box-sortables">
+
+	<!--about-->
+	<div id="wpmo-about" class="postbox">
+	<h3 class="hndle"><?php _e('About this plugin', 'wp-mail-options'); ?></h3>
+	<div class="inside"><ul>
+	<li><a href="http://www.cbug.org"><?php _e('Plugin URI', 'wp-mail-options'); ?></a></li>
+	<li><a href="http://www.cbug.org" target="_blank"><?php _e('Author URI', 'wp-mail-options'); ?></a></li>
+	</ul></div>
 	</div>
-	</div>
-	</div>
-	</div>
+	<!--about end-->
+
+	<!--others-->
+	<!--others end-->
+
+	</div></div></div>
+	<!--right end-->
+
 	</div>
 	</div>
 	<?php
