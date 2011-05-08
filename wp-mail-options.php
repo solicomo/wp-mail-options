@@ -298,9 +298,9 @@ function WPMailOptions_PHPMailer_Init(&$mailer) {
 }
 
 /**
- * Registers additional links for the sitemap plugin on the WP plugin configuration page
+ * Registers additional links for the plugin on the WP plugin configuration page
  *
- * Registers the links if the $file param equals to the sitemap plugin
+ * Registers the links if the $file param equals to the plugin
  * @param $links Array An array with the existing links
  * @param $file string The file to compare to
  */
