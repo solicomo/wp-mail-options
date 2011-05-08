@@ -13,7 +13,6 @@ if($_POST['wpmo_update_options'] == 'Y') {
 if(!class_exists('WPMailOptionsPage')) {
 class WPMailOptionsPage {
 function WPMailOptions_Options_Page() {
-	load_plugin_textdomain( 'wp-mail-options', false, dirname( plugin_basename( __FILE__ ) ) . "/lang" );
 	?>
 
 	<div class="wrap">
