@@ -6,7 +6,7 @@ WP Mail Options Page
 $wpmo_status = "normal";
 
 if($_POST['wpmo_update_options'] == 'Y') {
-	update_option("wp_mail_options", serialize($_POST));
+	update_option("wp_mail_options", maybe_serialize($_POST));
 	$wpmo_status = 'update_success';
 }
 
@@ -48,7 +48,7 @@ function WPMailOptions_Options_Page() {
 
 	<!--setting-->
 	<div id="wpmo-setting" class="tool-box">
-	<?php $wp_mail_options = unserialize(get_option('wp_mail_options')); ?>
+	<?php $wp_mail_options = maybe_unserialize(get_option('wp_mail_options')); ?>
 	<form method="post" action="<?php echo get_bloginfo("wpurl"); ?>/wp-admin/options-general.php?page=<?php echo plugin_basename(__FILE__); ?>">
 	<input type="hidden" name="wpmo_update_options" value="Y">
 	<table class="form-table">

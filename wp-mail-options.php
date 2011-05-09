@@ -34,7 +34,7 @@ function is_str_and_not_empty($var) {
 function WPMailOptions_PHPMailer_Init(&$mailer) {
 	$phpmailer = &$mailer;
 
-	$wp_mail_options = unserialize(get_option('wp_mail_options'));
+	$wp_mail_options = maybe_unserialize(get_option('wp_mail_options'));
 
 	/////////////////////////////////////////////////
 	// PROPERTIES, PUBLIC
