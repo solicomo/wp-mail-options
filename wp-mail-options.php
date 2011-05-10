@@ -15,6 +15,9 @@ Released under the GPL license
 http://www.gnu.org/licenses/gpl.txt
 */
 
+//for gettext
+$notuse = __("This plugin allows you to set almost all options of emails sent by WordPress. In fact, it just simply modified the value of the PHPMailer's member variables. Warning: This plugin is only for advanced users. You should know exactly what effect each option will have on the behavior of PHPMailer when you use this plugin.");
+
 if(!class_exists('WPMailOptions')) {
 class WPMailOptions {
 

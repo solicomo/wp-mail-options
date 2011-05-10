@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WP Mail Options V0.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-05 19:29+0800\n"
-"PO-Revision-Date: 2010-12-05 19:43+0800\n"
+"POT-Creation-Date: 2011-05-10 11:50+0800\n"
+"PO-Revision-Date: 2011-05-10 11:50+0800\n"
 "Last-Translator: Soli <soli@qq.com>\n"
 "Language-Team: Soli <soli@qq.com>\n"
 "MIME-Version: 1.0\n"
@@ -16,15 +16,15 @@ msgstr ""
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../wp-mail-options-page.php:25
+#: ../wp-mail-options-page.php:24
 msgid "Configuration updated"
 msgstr "配置已更新"
 
-#: ../wp-mail-options-page.php:27
+#: ../wp-mail-options-page.php:26
 msgid "Error while saving options"
 msgstr "保存选项时出错"
 
-#: ../wp-mail-options-page.php:38
+#: ../wp-mail-options-page.php:37
 msgid ""
 "<p>This plugin allows you to set almost all options of emails sent by WordPress. In fact, it just simply modified the value of the PHPMailer's member variables, which is offered on the right, including their description, type, name and default vlaue following the equal sign.</p>\n"
 "<p>In most cases, this plugin replace the old value of each variable with the new value you give below; for the rest, it apends new value after the old value, for instance, To, Cc, Bcc and so on.</p>\n"
@@ -38,303 +38,307 @@ msgstr ""
 "<p>如果您不想（或者不知道如何）设置某一项，请您把该项留空。</p>\n"
 "<p><b>警告：</b>本插件只针对高级用户。在使用本插件时，你必须确切地了解各选项将会对PHPMailer的行为产生怎样的影响。</p>"
 
-#: ../wp-mail-options-page.php:57
+#: ../wp-mail-options-page.php:56
 msgid "PROPERTIES, PUBLIC"
 msgstr "公共属性"
 
-#: ../wp-mail-options-page.php:59
+#: ../wp-mail-options-page.php:58
 msgid "Email Priority"
 msgstr "邮件优先级"
 
-#: ../wp-mail-options-page.php:61
+#: ../wp-mail-options-page.php:60
 msgid "Email priority (1 = High, 3 = Normal, 5 = low)."
 msgstr "邮件的优先级别(1 = 高, 3 = 中, 5 = 低)"
 
-#: ../wp-mail-options-page.php:65
+#: ../wp-mail-options-page.php:64
 msgid "CharSet"
 msgstr "字符集"
 
-#: ../wp-mail-options-page.php:67
+#: ../wp-mail-options-page.php:66
 msgid "Sets the CharSet of the message."
 msgstr "设置邮件的字符集"
 
-#: ../wp-mail-options-page.php:71
+#: ../wp-mail-options-page.php:70
 msgid "Content-type"
 msgstr "消息类型（Content-type）"
 
-#: ../wp-mail-options-page.php:73
+#: ../wp-mail-options-page.php:72
 msgid "Sets the Content-type of the message."
 msgstr "设置邮件的消息类型"
 
-#: ../wp-mail-options-page.php:77
+#: ../wp-mail-options-page.php:76
 msgid "Encoding"
 msgstr "编码"
 
-#: ../wp-mail-options-page.php:79
+#: ../wp-mail-options-page.php:78
 msgid "Sets the Encoding of the message. Options for this are \"8bit\", \"7bit\", \"binary\", \"base64\", and \"quoted-printable\"."
 msgstr "设置邮件的编码类型，如 \"8bit\", \"7bit\", \"binary\", \"base64\", and \"quoted-printable\""
 
-#: ../wp-mail-options-page.php:89
+#: ../wp-mail-options-page.php:88
 msgid "From"
 msgstr "发件人邮箱地址"
 
-#: ../wp-mail-options-page.php:91
+#: ../wp-mail-options-page.php:90
 msgid "Sets the From email address for the message."
 msgstr "设置邮件的来源地址"
 
-#: ../wp-mail-options-page.php:95
+#: ../wp-mail-options-page.php:94
 msgid "From Name"
 msgstr "发件人姓名"
 
-#: ../wp-mail-options-page.php:97
+#: ../wp-mail-options-page.php:96
 msgid "Sets the From name of the message."
 msgstr "设置邮件的发件人姓名"
 
-#: ../wp-mail-options-page.php:101
+#: ../wp-mail-options-page.php:100
 msgid "Sender (Return-Path)"
 msgstr "发送者（返回路径）"
 
-#: ../wp-mail-options-page.php:103
+#: ../wp-mail-options-page.php:102
 msgid "Sets the Sender email (Return-Path) of the message.  If not empty, will be sent via -f to sendmail or as 'MAIL FROM' in smtp mode."
 msgstr "设置邮件的发送者（回复路径）。如果不为空，则在发送邮件时使用sendmail的-f选项，或者在SMTP模式下使用‘MAIL FROM’命令。"
 
-#: ../wp-mail-options-page.php:107
+#: ../wp-mail-options-page.php:106
 msgid "Subject"
 msgstr "主题"
 
-#: ../wp-mail-options-page.php:109
+#: ../wp-mail-options-page.php:108
 msgid "Sets the Subject of the message."
 msgstr "设置邮件的主题"
 
-#: ../wp-mail-options-page.php:113
+#: ../wp-mail-options-page.php:112
 msgid "Body"
 msgstr "邮件体"
 
-#: ../wp-mail-options-page.php:115
+#: ../wp-mail-options-page.php:114
 msgid "Sets the Body of the message.  This can be either an HTML or text body. If HTML then run IsHTML(true)."
 msgstr "设置邮件内容。HTML格式或文本格式均可。如果是HTML格式需要调用IsHTML(true)"
 
-#: ../wp-mail-options-page.php:119
+#: ../wp-mail-options-page.php:118
 msgid "Alternative Body"
 msgstr "替换邮件体"
 
-#: ../wp-mail-options-page.php:121
+#: ../wp-mail-options-page.php:120
 msgid "Sets the text-only body of the message.  This automatically sets the email to multipart/alternative.  This body can be read by mail clients that do not have HTML email capability such as mutt. Clients that can read HTML will view the normal Body."
 msgstr "设置只含文本的邮件体。设置此参数后，邮件的消息类型自动被设置为“multipart/alternative”。这种邮件体可被那些不支持HTML的邮件客户端（如mutt）读取。支持HTML的邮件客户端则显示正常的邮件体。"
 
-#: ../wp-mail-options-page.php:125
+#: ../wp-mail-options-page.php:124
 msgid "WordWrap"
 msgstr "自动换行"
 
-#: ../wp-mail-options-page.php:127
+#: ../wp-mail-options-page.php:126
 msgid "Sets word wrapping on the body of the message to a given number of characters."
 msgstr "设置自动换行。邮件体中的某一行达到此处指定的字符数后会自动换行。"
 
-#: ../wp-mail-options-page.php:131
+#: ../wp-mail-options-page.php:130
 msgid "Mailer"
 msgstr "发送邮件方式"
 
-#: ../wp-mail-options-page.php:133
+#: ../wp-mail-options-page.php:132
 msgid "Method to send mail: (\"mail\", \"sendmail\", or \"smtp\")."
 msgstr "发送邮件方式：\"mail\"、\"sendmail\" 或 \"smtp\"。"
 
-#: ../wp-mail-options-page.php:137
+#: ../wp-mail-options-page.php:136
 msgid "Sendmail Program"
 msgstr "sendmail程序"
 
-#: ../wp-mail-options-page.php:139
+#: ../wp-mail-options-page.php:138
 msgid "Sets the path of the sendmail program."
 msgstr "设置sendmail程序的路径"
 
-#: ../wp-mail-options-page.php:143
+#: ../wp-mail-options-page.php:142
 msgid "PHPMailer Plugins Path"
 msgstr "PHPMailer插件的路径"
 
-#: ../wp-mail-options-page.php:145
+#: ../wp-mail-options-page.php:144
 msgid "Path to PHPMailer plugins.  This is now only useful if the SMTP class is in a different directory than the PHP include path."
 msgstr "PHPMailer插件的路径。当SMTP类所存放的路径与PHP的include路径不一样时此参数才有用。"
 
-#: ../wp-mail-options-page.php:149
+#: ../wp-mail-options-page.php:148
 msgid "PHPMailer Version"
 msgstr "PHPMailer版本号"
 
-#: ../wp-mail-options-page.php:151
+#: ../wp-mail-options-page.php:150
 msgid "Holds PHPMailer version."
 msgstr "保存PHPMailer的版本号"
 
-#: ../wp-mail-options-page.php:155
+#: ../wp-mail-options-page.php:154
 msgid "Confirm Reading To"
 msgstr "已读回执"
 
-#: ../wp-mail-options-page.php:157
+#: ../wp-mail-options-page.php:156
 msgid "Sets the email address that a reading confirmation will be sent."
 msgstr "设置接收已读回执的邮件地址"
 
-#: ../wp-mail-options-page.php:161
+#: ../wp-mail-options-page.php:160
 msgid "Hostname"
 msgstr "主机名"
 
-#: ../wp-mail-options-page.php:163
+#: ../wp-mail-options-page.php:162
 msgid "Sets the hostname to use in Message-Id and Received headers and as default HELO string. If empty, the value returned by SERVER_NAME is used or 'localhost.localdomain'."
 msgstr "设置主机名。该参数会在邮件头部的Message-Id字段和Received字段中使用，也会作为HELO命令的默认参数。如果为空，则使用环境变量 SERVER_NAME 的值，或者 'localhost.localdomain'"
 
-#: ../wp-mail-options-page.php:167
+#: ../wp-mail-options-page.php:166
 msgid "MessageID"
 msgstr "消息ID"
 
-#: ../wp-mail-options-page.php:169
+#: ../wp-mail-options-page.php:168
 msgid "Sets the message ID to be used in the Message-Id header. If empty, a unique id will be generated."
 msgstr "设置邮件头部 Message-Id 字段的消息ID。如果为空，则生成一个全局唯一的ID作为消息ID"
 
-#: ../wp-mail-options-page.php:174
+#: ../wp-mail-options-page.php:173
 msgid "PROPERTIES FOR SMTP"
 msgstr "SMTP的属性设置"
 
-#: ../wp-mail-options-page.php:176
+#: ../wp-mail-options-page.php:175
 msgid "SMTP Host"
 msgstr "SMTP主机"
 
-#: ../wp-mail-options-page.php:178
+#: ../wp-mail-options-page.php:177
 msgid "Sets the SMTP hosts.  All hosts must be separated by a semicolon.  You can also specify a different port for each host by using this format: [hostname:port] (e.g. \"smtp1.example.com:25;smtp2.example.com\"). Hosts will be tried in order."
 msgstr "设置SMTP的主机。所有主机以分号隔开。你还可以以下列格式为每个主机指定一个不同的端口： [hostname:port] (例如： \"smtp1.example.com:25;smtp2.example.com\")。依次试用每个主机，直到有一个可用。"
 
-#: ../wp-mail-options-page.php:182
+#: ../wp-mail-options-page.php:181
 msgid "SMTP Port"
 msgstr "SMTP端口"
 
-#: ../wp-mail-options-page.php:184
+#: ../wp-mail-options-page.php:183
 msgid "Sets the default SMTP server port."
 msgstr "设置默认的SMTP服务端口"
 
-#: ../wp-mail-options-page.php:188
+#: ../wp-mail-options-page.php:187
 msgid "SMTP Helo"
 msgstr "SMTP的Helo命令"
 
-#: ../wp-mail-options-page.php:190
+#: ../wp-mail-options-page.php:189
 msgid "Sets the SMTP HELO of the message (Default is $Hostname)."
 msgstr "设置SMTP的HELO命令参数（默认为$Hostname）"
 
-#: ../wp-mail-options-page.php:194
+#: ../wp-mail-options-page.php:193
 msgid "SMTP Secure"
 msgstr "SMTP安全"
 
-#: ../wp-mail-options-page.php:196
+#: ../wp-mail-options-page.php:195
 msgid "Sets connection prefix. Options are \"\", \"ssl\" or \"tls\""
 msgstr "设置链接前缀（协议）。可用选项为 \"\"、 \"ssl\" 或 \"tls\""
 
-#: ../wp-mail-options-page.php:200
+#: ../wp-mail-options-page.php:199
 msgid "SMTP Authentication"
 msgstr "SMTP验证方式"
 
-#: ../wp-mail-options-page.php:202
+#: ../wp-mail-options-page.php:201
 msgid "Sets SMTP authentication. Utilizes the Username and Password variables."
 msgstr "设置SMTP的验证方式。使用用户名和密码。"
 
-#: ../wp-mail-options-page.php:206
+#: ../wp-mail-options-page.php:205
 msgid "SMTP Username"
 msgstr "SMTP用户名"
 
-#: ../wp-mail-options-page.php:208
+#: ../wp-mail-options-page.php:207
 msgid "Sets SMTP username."
 msgstr "设置SMTP用户名"
 
-#: ../wp-mail-options-page.php:212
+#: ../wp-mail-options-page.php:211
 msgid "SMTP Password"
 msgstr "SMTP密码"
 
-#: ../wp-mail-options-page.php:214
+#: ../wp-mail-options-page.php:213
 msgid "Sets SMTP password."
 msgstr "设置SMTP密码"
 
-#: ../wp-mail-options-page.php:218
+#: ../wp-mail-options-page.php:217
 msgid "SMTP Timeout"
 msgstr "SMTP超时"
 
-#: ../wp-mail-options-page.php:220
+#: ../wp-mail-options-page.php:219
 msgid "Sets the SMTP server timeout in seconds. This function will not work with the win32 version."
 msgstr "设置SMTP服务的超时时间（秒为单位）。此功能在Win32版本中无效。"
 
-#: ../wp-mail-options-page.php:224
+#: ../wp-mail-options-page.php:223
 msgid "SMTP Debug"
 msgstr "调试SMTP"
 
-#: ../wp-mail-options-page.php:226
+#: ../wp-mail-options-page.php:225
 msgid "Sets SMTP class debugging on or off."
 msgstr "设置是否开启SMTP调试功能"
 
-#: ../wp-mail-options-page.php:230
+#: ../wp-mail-options-page.php:229
 msgid "SMTP Keep Alive"
 msgstr "保持SMTP链接"
 
-#: ../wp-mail-options-page.php:232
+#: ../wp-mail-options-page.php:231
 msgid "Prevents the SMTP connection from being closed after each mail sending.  If this is set to true then to close the connection requires an explicit call to SmtpClose()."
 msgstr "防止每次发送邮件都关闭SMTP链接。如果此参数被设置成true，则在关闭链接时需要显式地调用SmtpClose()"
 
-#: ../wp-mail-options-page.php:236
+#: ../wp-mail-options-page.php:235
 msgid "SMTP SingleTo"
 msgstr "是否单独发送"
 
-#: ../wp-mail-options-page.php:238
+#: ../wp-mail-options-page.php:237
 msgid "Provides the ability to have the TO field process individual emails, instead of sending to entire TO addresses"
 msgstr "为TO字段中的每个收件地址单独发送邮件，而不是一次性向TO字段中的所有邮件地址发送邮件。"
 
-#: ../wp-mail-options-page.php:242
+#: ../wp-mail-options-page.php:241
 msgid "PROPERTIES, PRIVATE"
 msgstr "私有属性"
 
-#: ../wp-mail-options-page.php:244
+#: ../wp-mail-options-page.php:243
 msgid "To"
 msgstr "收件人"
 
-#: ../wp-mail-options-page.php:248
+#: ../wp-mail-options-page.php:247
 msgid "Cc"
 msgstr "抄送"
 
-#: ../wp-mail-options-page.php:252
+#: ../wp-mail-options-page.php:251
 msgid "Bcc"
 msgstr "密送"
 
-#: ../wp-mail-options-page.php:256
+#: ../wp-mail-options-page.php:255
 msgid "ReplyTo"
 msgstr "回复"
 
-#: ../wp-mail-options-page.php:260
+#: ../wp-mail-options-page.php:259
 msgid "Attachment"
 msgstr "附件"
 
-#: ../wp-mail-options-page.php:264
+#: ../wp-mail-options-page.php:263
 msgid "Custom Header"
 msgstr "自定义头部"
 
-#: ../wp-mail-options-page.php:268
+#: ../wp-mail-options-page.php:267
 msgid "Boundary"
 msgstr "分节符"
 
-#: ../wp-mail-options-page.php:285
+#: ../wp-mail-options-page.php:284
 msgid "Save Changes"
 msgstr "保存修改"
 
-#: ../wp-mail-options-page.php:304
+#: ../wp-mail-options-page.php:303
 msgid "About this plugin"
 msgstr "关于本插件"
 
-#: ../wp-mail-options-page.php:306
+#: ../wp-mail-options-page.php:305
 msgid "Plugin URI"
 msgstr "插件链接地址"
 
-#: ../wp-mail-options-page.php:307
+#: ../wp-mail-options-page.php:306
 msgid "Author URI"
 msgstr "作者页面"
 
-#: ../wp-mail-options-page.php:324
+#: ../wp-mail-options-page.php:323
 msgid "WP Mail Options"
 msgstr "邮件选项"
 
-#: ../wp-mail-options.php:312
+#: ../wp-mail-options.php:19
+msgid "This plugin allows you to set almost all options of emails sent by WordPress. In fact, it just simply modified the value of the PHPMailer's member variables. Warning: This plugin is only for advanced users. You should know exactly what effect each option will have on the behavior of PHPMailer when you use this plugin."
+msgstr "使用本插件，您可以配置从WordPress发出的邮件的几乎所有的选项。实际上，它只是简单地修改PHPMailer的成员变量。>警告：本插件只针对高级用户。在使用本插件时，你必须确切地了解各选项将会对PHPMailer的行为产生怎样的影响。"
+
+#: ../wp-mail-options.php:315
 msgid "Settings"
 msgstr "配置"
 
-#: ../wp-mail-options.php:313
+#: ../wp-mail-options.php:316
 msgid "FAQ"
 msgstr "常见问题"
 
