@@ -280,16 +280,29 @@ function WPMailOptions_PHPMailer_Init(&$mailer) {
 	/////////////////////////////////////////////////
 	// PROPERTIES, PRIVATE
 	/////////////////////////////////////////////////
-/*
-	$phpmailer->to              = array();
-	$phpmailer->cc              = array();
-	$phpmailer->bcc             = array();
-	$phpmailer->ReplyTo         = array();
-	$phpmailer->attachment      = array();
-	$phpmailer->CustomHeader    = array();
-	$phpmailer->boundary        = array();
 
-	$phpmailer->smtp            = NULL;
+	if($this->is_str_and_not_empty($wp_mail_options['wpmo_mail_to']))
+		$phpmailer->to              = explode(',', $wp_mail_options['wpmo_mail_to']);
+
+	if($this->is_str_and_not_empty($wp_mail_options['wpmo_mail_cc']))
+		$phpmailer->cc              = explode(',', $wp_mail_options['wpmo_mail_cc']);
+
+	if($this->is_str_and_not_empty($wp_mail_options['wpmo_mail_bcc']))
+		$phpmailer->bcc             = explode(',', $wp_mail_options['wpmo_mail_bcc']);
+
+	if($this->is_str_and_not_empty($wp_mail_options['wpmo_mail_replyto']))
+		$phpmailer->ReplyTo= explode(',', $wp_mail_options['wpmo_mail_replyto']);
+
+	if($this->is_str_and_not_empty($wp_mail_options['wpmo_mail_attachment']))
+		$phpmailer->attachment  += $wp_mail_options['wpmo_mail_attachment'];
+
+	if($this->is_str_and_not_empty($wp_mail_options['wpmo_mail_custom_header']))
+		$phpmailer->CustomHeader+= $wp_mail_options['wpmo_mail_custom_header'];
+
+	if($this->is_str_and_not_empty($wp_mail_options['wpmo_mail_boundary']))
+		$phpmailer->boundary     = $wp_mail_options['wpmo_mail_boundary'];
+
+/*	$phpmailer->smtp            = NULL;
 	$phpmailer->message_type    = '';
 	$phpmailer->language        = array();
 	$phpmailer->error_count     = 0;
