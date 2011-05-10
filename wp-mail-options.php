@@ -323,12 +323,8 @@ function RegisterPluginLinks($links, $file) {
  */
 function ActivatePlugin() {
 	$optfile = trailingslashit(dirname(__FILE__)) . "options.txt";
-	@ $fp = fopen($optfile, 'r');
-	if($fp) {
-		$options = fgets($fp);
-		fclose($fp);
-		add_option("wp_mail_options", $options, '', 'no');
-	}
+	$options = file_get_contents($optfile);
+	add_option("wp_mail_options", $options, '', 'no');
 }
 
 /**
@@ -336,12 +332,7 @@ function ActivatePlugin() {
  */
 function DeactivatePlugin() {
 	$optfile = trailingslashit(dirname(__FILE__)) . "options.txt";
-	@ $fp = fopen($optfile, 'w');
-	if($fp) {
-		fputs($fp, get_option("wp_mail_options"));
-		fclose($fp);
-	}
-	
+	file_put_contents($optfile, get_option("wp_mail_options"));	
 	delete_option("wp_mail_options");
 }
 
