@@ -47,13 +47,14 @@ function WPMailOptions_Options_Page() {
 	<div class="meta-box-sortabless">
 
 	<!--setting-->
-	<div id="wpmo-setting" class="tool-box">
+	<div id="wpmo-setting" class="postbox">
+	<h3 class="hndle"><?php _e('Settings', 'wp-mail-options'); ?></h3>
 	<?php $wp_mail_options = maybe_unserialize(get_option('wp_mail_options')); ?>
 	<form method="post" action="<?php echo get_bloginfo("wpurl"); ?>/wp-admin/options-general.php?page=<?php echo plugin_basename(__FILE__); ?>">
 	<input type="hidden" name="wpmo_update_options" value="Y">
 	<table class="form-table">
 
-	<tr><th><?php _e('PROPERTIES, PUBLIC', 'wp-mail-options'); ?></th></tr>
+	<tr><th><b><?php _e('PROPERTIES, PUBLIC', 'wp-mail-options'); ?></b></th></tr>
 
 	<tr><th scope="row"><?php _e('Email Priority', 'wp-mail-options'); ?></th>
 	<td><input type="text" name="wpmo_mail_prior" value="<?php echo $wp_mail_options['wpmo_mail_prior']; ?>" /></td>
@@ -99,7 +100,7 @@ function WPMailOptions_Options_Page() {
 
 	<tr><th scope="row"><?php _e('Sender (Return-Path)', 'wp-mail-options'); ?></th>
 	<td><input type="text" name="wpmo_mail_sender" value="<?php echo $wp_mail_options['wpmo_mail_sender']; ?>" /></td>
-	<td><?php _e("Sets the Sender email (Return-Path) of the message.  If not empty, will be sent via -f to sendmail or as 'MAIL FROM' in smtp mode."); ?>
+	<td><?php _e("Sets the Sender email (Return-Path) of the message.  If not empty, will be sent via -f to sendmail or as 'MAIL FROM' in smtp mode.", 'wp-mail-options'); ?>
 	<br />@var string
 	<br />$Sender            = '';</td></tr>
 
@@ -159,7 +160,7 @@ function WPMailOptions_Options_Page() {
 
 	<tr><th scope="row"><?php _e('Hostname', 'wp-mail-options'); ?></th>
 	<td><input type="text" name="wpmo_mail_host_name" value="<?php echo $wp_mail_options['wpmo_mail_host_name']; ?>" /></td>
-	<td><?php _e("Sets the hostname to use in Message-Id and Received headers and as default HELO string. If empty, the value returned by SERVER_NAME is used or 'localhost.localdomain'."); ?>
+	<td><?php _e("Sets the hostname to use in Message-Id and Received headers and as default HELO string. If empty, the value returned by SERVER_NAME is used or 'localhost.localdomain'.", 'wp-mail-options'); ?>
 	<br />@var string
 	<br />$Hostname          = '';</td></tr>
 
@@ -170,7 +171,7 @@ function WPMailOptions_Options_Page() {
 	<br />$MessageID         = '';</td></tr>
 
 
-	<tr><th><?php _e('PROPERTIES FOR SMTP', 'wp-mail-options'); ?></th></tr>
+	<tr><th><b><?php _e('PROPERTIES FOR SMTP', 'wp-mail-options'); ?></b></th></tr>
 
 	<tr><th scope="row"><?php _e('SMTP Host', 'wp-mail-options'); ?></th>
 	<td><input type="text" name="wpmo_mail_smtp_host" value="<?php echo $wp_mail_options['wpmo_mail_smtp_host']; ?>" /></td>
@@ -238,7 +239,7 @@ function WPMailOptions_Options_Page() {
 	<br />@var bool
 	<br />$SingleTo = false;</td></tr>
 
-	<tr><th><?php _e('PROPERTIES, PRIVATE', 'wp-mail-options'); ?></th></tr>
+	<tr><th><b><?php _e('PROPERTIES, PRIVATE', 'wp-mail-options'); ?></b></th></tr>
 
 	<tr><th scope="row"><?php _e('To', 'wp-mail-options'); ?></th>
 	<td><input type="text" name="wpmo_mail_to" value="<?php echo $wp_mail_options['wpmo_mail_to']; ?>" /></td>
