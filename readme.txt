@@ -2,8 +2,8 @@
 Contributors: Soli
 Tags: wp mail options, phpmailer, mail from, from email, email from, from address, mail, email, smtp, from address, email address, from header
 Requires at least: 2.2
-Tested up to: 3.1.2
-Stable tag: 0.1.2
+Tested up to: 3.2.1
+Stable tag: 0.1.3
 
 This plugin allows you to set almost all options of emails sent by WordPress. 
 
@@ -31,6 +31,9 @@ Possibly your mail server has added a *Sender:* header or is configured to alway
 1. The settings menu
 
 == Changelog ==
+
+= 0.1.3 =
+* Tested up to: 3.2.1
 
 = 0.1.2 =
 * Tested up to: 3.1.2
