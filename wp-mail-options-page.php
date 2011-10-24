@@ -50,7 +50,7 @@ function WPMailOptions_Options_Page() {
 	<div id="wpmo-setting" class="postbox">
 	<h3 class="hndle"><?php _e('Settings', 'wp-mail-options'); ?></h3>
 	<?php $wp_mail_options = maybe_unserialize(get_option('wp_mail_options')); ?>
-	<form method="post" action="<?php echo get_bloginfo("wpurl"); ?>/wp-admin/options-general.php?page=<?php echo plugin_basename(__FILE__); ?>">
+	<form method="post" action="<?php echo get_bloginfo("wpurl"); ?>/wp-admin/options-general.php?page=wp-mail-options">
 	<input type="hidden" name="wpmo_update_options" value="Y">
 	<table class="form-table">
 
@@ -321,7 +321,7 @@ function WPMailOptions_Options_Page() {
 }
 
 function WPMailOptions_Menu() {
-	add_options_page(__('WP Mail Options'), __('WP Mail Options'), 10, "wp-mail-options", array(__CLASS__,'WPMailOptions_Options_Page'));
+	add_options_page(__('WP Mail Options'), __('WP Mail Options'), 10, 'wp-mail-options', array(__CLASS__,'WPMailOptions_Options_Page'));
 }
 
 } // end of class WPMailOptions
