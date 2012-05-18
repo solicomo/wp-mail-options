@@ -303,7 +303,7 @@ function WPMailOptions_Options_Page() {
 	<div id="wpmo-about" class="postbox">
 	<h3 class="hndle"><?php _e('About this plugin', 'wp-mail-options'); ?></h3>
 	<div class="inside"><ul>
-	<li><a href="http://www.cbug.org"><?php _e('Plugin URI', 'wp-mail-options'); ?></a></li>
+	<li><a href="http://wordpress.org/extend/plugins/wp-mail-options/"><?php _e('Plugin URI', 'wp-mail-options'); ?></a></li>
 	<li><a href="http://www.cbug.org" target="_blank"><?php _e('Author URI', 'wp-mail-options'); ?></a></li>
 	</ul></div>
 	</div>
