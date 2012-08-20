@@ -3,7 +3,7 @@
 Plugin Name: WP Mail Options
 Plugin URI: http://wordpress.org/extend/plugins/wp-mail-options/
 Description: This plugin allows you to set almost all options of emails sent by WordPress. In fact, it just simply modified the value of the PHPMailer's member variables. Warning: This plugin is only for advanced users. You should know exactly what effect each option will have on the behavior of PHPMailer when you use this plugin.
-Version: 0.1.5
+Version: 0.1.6
 Author: Soli
 Author URI: http://www.cbug.org
 Text Domain: wp-mail-options
@@ -323,9 +323,8 @@ function WPMailOptions_PHPMailer_Init(&$mailer) {
 function RegisterPluginLinks($links, $file) {
 	load_plugin_textdomain( 'wp-mail-options', false, dirname( plugin_basename( __FILE__ ) ) . "/lang" );
 	$base = plugin_basename(__FILE__);
-	$options_page = trailingslashit(dirname($base)) . "wp-mail-options-page.php";
 	if ($file ==$base) {
-		$links[] = '<a href="options-general.php?page=' . $options_page .'">' . __('Settings','wp-mail-options') . '</a>';
+		$links[] = '<a href="options-general.php?page=wp-mail-options">' . __('Settings','wp-mail-options') . '</a>';
 		$links[] = '<a href="http://www.cbug.org/category/wp-mail-options">' . __('FAQ','wp-mail-options') . '</a>';
 	}
 	return $links;
