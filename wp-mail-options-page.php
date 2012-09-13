@@ -41,8 +41,29 @@ function WPMailOptions_Options_Page() {
 <p><b>Warning:</b> This plugin is only for advanced users. You should know exactly what effect each option will have on the behavior of PHPMailer when you use this plugin. </p>", 'wp-mail-options'); ?>
 	</div>
 
+	<!--right-->
+	<div class="postbox-container" style="float:right;width:300px;">
+	<div class="metabox-holder">
+	<div class="meta-box-sortables">
+
+	<!--about-->
+	<div id="wpmo-about" class="postbox">
+	<h3 class="hndle"><?php _e('About this plugin', 'wp-mail-options'); ?></h3>
+	<div class="inside"><ul>
+	<li><a href="http://wordpress.org/extend/plugins/wp-mail-options/"><?php _e('Plugin URI', 'wp-mail-options'); ?></a></li>
+	<li><a href="http://www.cbug.org" target="_blank"><?php _e('Author URI', 'wp-mail-options'); ?></a></li>
+	</ul></div>
+	</div>
+	<!--about end-->
+
+	<!--others-->
+	<!--others end-->
+
+	</div></div></div>
+	<!--right end-->
+
 	<!--left-->
-	<div class="postbox-container" style="width:75%;">
+	<div class="postbox-container" style="float:none;margin-right:320px;">
 	<div class="metabox-holder">
 	<div class="meta-box-sortabless">
 
@@ -294,34 +315,13 @@ function WPMailOptions_Options_Page() {
 	</div></div></div>
 	<!--left end-->
 
-	<!--right-->
-	<div class="postbox-container" style="width:21%;">
-	<div class="metabox-holder">
-	<div class="meta-box-sortables">
-
-	<!--about-->
-	<div id="wpmo-about" class="postbox">
-	<h3 class="hndle"><?php _e('About this plugin', 'wp-mail-options'); ?></h3>
-	<div class="inside"><ul>
-	<li><a href="http://wordpress.org/extend/plugins/wp-mail-options/"><?php _e('Plugin URI', 'wp-mail-options'); ?></a></li>
-	<li><a href="http://www.cbug.org" target="_blank"><?php _e('Author URI', 'wp-mail-options'); ?></a></li>
-	</ul></div>
-	</div>
-	<!--about end-->
-
-	<!--others-->
-	<!--others end-->
-
-	</div></div></div>
-	<!--right end-->
-
 	</div>
 	</div>
 	<?php
 }
 
 function WPMailOptions_Menu() {
-	add_options_page(__('WP Mail Options'), __('WP Mail Options'), 10, 'wp-mail-options', array(__CLASS__,'WPMailOptions_Options_Page'));
+	add_options_page(__('WP Mail Options'), __('WP Mail Options'), 'manage_options', 'wp-mail-options', array(__CLASS__,'WPMailOptions_Options_Page'));
 }
 
 } // end of class WPMailOptions
