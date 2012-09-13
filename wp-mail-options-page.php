@@ -100,13 +100,15 @@ function WPMailOptions_Options_Page() {
 	<td><?php _e('Sets the Encoding of the message. Options for this are "8bit", "7bit", "binary", "base64", and "quoted-printable".', 'wp-mail-options'); ?>
 	<br />@var string
 	<br />$Encoding          = '8bit';</td></tr>
-<?php/*
+<?php
+/*
 	<tr><th scope="row"><?php _e('Error Info', 'wp-mail-options'); ?></th>
 	<td><input type="text" name="wpmo_mail_error_info" value="<?php echo $wp_mail_options['wpmo_mail_error_info']; ?>" /></td>
 	<td><?php _e('Holds the most recent mailer error message.', 'wp-mail-options'); ?>
 	<br />@var string
 	<br />$ErrorInfo         = '';</td></tr>
- */?>
+ */
+?>
 	<tr><th scope="row"><?php _e('From', 'wp-mail-options'); ?></th>
 	<td><input type="text" name="wpmo_mail_from" value="<?php echo $wp_mail_options['wpmo_mail_from']; ?>" /></td>
 	<td><?php _e('Sets the From email address for the message.', 'wp-mail-options'); ?>
