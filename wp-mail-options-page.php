@@ -5,9 +5,11 @@ WP Mail Options Page
 
 $wpmo_status = "normal";
 
-if($_POST['wpmo_update_options'] == 'Y') {
-	update_option("wp_mail_options", maybe_serialize($_POST));
-	$wpmo_status = 'update_success';
+if(isset($_POST['wpmo_update_options'])) {
+	if($_POST['wpmo_update_options'] == 'Y') {
+		update_option("wp_mail_options", maybe_serialize($_POST));
+		$wpmo_status = 'update_success';
+	}
 }
 
 if(!class_exists('WPMailOptionsPage')) {
