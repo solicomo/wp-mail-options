@@ -7,8 +7,22 @@ $wpmo_status = "normal";
 
 if(isset($_POST['wpmo_update_options'])) {
 	if($_POST['wpmo_update_options'] == 'Y') {
-		update_option("wp_mail_options", maybe_serialize($_POST));
-		$wpmo_status = 'update_success';
+		if(update_option("wp_mail_options", maybe_serialize($_POST))) {
+			$wpmo_status = 'update_success';
+		} else {
+			$wpmo_status = 'update_failed';
+		}
+	}
+}
+
+if(isset($_POST['wpmo_test_mail'])) {
+	if($_POST['wpmo_test_mail'] == 'Y') {
+		if(wp_mail($_POST['wpmo_test_to'], $_POST['wpmo_test_subject'],
+				$_POST['wpmo_test_msg'], $_POST['wpmo_test_headers'])) {
+			$wpmo_status = 'test_success';
+		} else {
+			$wpmo_status = 'test_failed';
+		}
 	}
 }
 
@@ -16,26 +30,39 @@ if(!class_exists('WPMailOptionsPage')) {
 class WPMailOptionsPage {
 function WPMailOptions_Options_Page() {
 	?>
+	<style>
+	<!--
 
-	<div class="wrap">
-	<div id="wpmo-options">
-	<div id="wpmo-title"><h2>WP Mail Options</h2></div>
+	<?php include trailingslashit(dirname(__FILE__)) . 'style.css'; ?>
+
+	-->
+	</style>
+
+	<div class="pop_wrap">
+	<!-- title -->
+	<div class="pop_title"><h2>WP Mail Options</h2></div>
 	<?php
 	global $wpmo_status;
 	if($wpmo_status == 'update_success')
-		$message =__('Configuration updated', 'wp-mail-options') . "<br />";
+		$message =__('Configuration updated.', 'wp-mail-options') . "<br />";
 	else if($wpmo_status == 'update_failed')
-		$message =__('Error while saving options', 'wp-mail-options') . "<br />";
+		$message =__('Error while saving options, or options was not changed.', 'wp-mail-options') . "<br />";
+	else if($wpmo_status == 'test_success')
+		$message =__('Send test mail success.', 'wp-mail-options') . "<br />";
+	else if($wpmo_status == 'test_failed')
+		$message =__('Send test mail failed.', 'wp-mail-options') . "<br />";
 	else
 		$message = '';
 
 	if($message != "") {
 	?>
-		<div class="updated"><strong><p><?php
+		<!-- notice -->
+		<div class="pop_updated pop_round"><p><?php
 		echo $message;
-		?></p></strong></div><?php
+		?></p></div><?php
 	} ?>
-	<div id="wpmo-desc">
+	<!-- description -->
+	<div class="pop_desc">
 	<?php _e("<p>This plugin allows you to set almost all options of emails sent by WordPress. In fact, it just simply modified the value of the PHPMailer's member variables, which is offered on the right, including their description, type, name and default vlaue following the equal sign.</p>
 <p>In most cases, this plugin replace the old value of each variable with the new value you give below; for the rest, it apends new value after the old value, for instance, To, Cc, Bcc and so on.</p>
 <p>Some options will affect others to be effective, like if \"Mailer\" be set as \"mail\" or \"sentmail\", all options about SMTP in the following will be valid.</p>
@@ -43,39 +70,58 @@ function WPMailOptions_Options_Page() {
 <p><b>Warning:</b> This plugin is only for advanced users. You should know exactly what effect each option will have on the behavior of PHPMailer when you use this plugin. </p>", 'wp-mail-options'); ?>
 	</div>
 
+	<div class="pop_container">
 	<!--right-->
-	<div class="postbox-container" style="float:right;width:300px;">
-	<div class="metabox-holder">
-	<div class="meta-box-sortables">
+	<div class="pop_sidebar">
 
 	<!--about-->
-	<div id="wpmo-about" class="postbox">
-	<h3 class="hndle"><?php _e('About this plugin', 'wp-mail-options'); ?></h3>
-	<div class="inside"><ul>
+	<div id="wpmo-about" class="pop_box pop_round">
+	<h3><?php _e('About this plugin', 'wp-mail-options'); ?></h3>
+	<div class="pop_box_content"><ul>
 	<li><a href="http://wordpress.org/extend/plugins/wp-mail-options/"><?php _e('Plugin URI', 'wp-mail-options'); ?></a></li>
 	<li><a href="http://www.cbug.org" target="_blank"><?php _e('Author URI', 'wp-mail-options'); ?></a></li>
 	</ul></div>
 	</div>
 	<!--about end-->
 
+	<!-- test -->
+	<div id="wpmo-test" class="pop_box pop_round">
+	<h3><?php _e('Send test mail', 'wp-mail-options'); ?></h3>
+	<div class="pop_box_content">
+	<form method="post" action="<?php echo get_bloginfo("wpurl"); ?>/wp-admin/options-general.php?page=wp-mail-options">
+	<input type="hidden" name="wpmo_test_mail" value="Y">
+	<?php _e('Headers: ', 'wp-mail-options'); ?>
+	<textarea cols="30" rows="5" name="wpmo_test_headers"></textarea>
+	<?php _e('To: ', 'wp-mail-options'); ?>
+	<input type="text" name="wpmo_test_to" value="" />
+	<?php _e('Subject: ', 'wp-mail-options'); ?>
+	<input type="text" name="wpmo_test_subject" value="" />
+	<?php _e('Message: ', 'wp-mail-options'); ?>
+	<textarea cols="30" rows="5" name="wpmo_test_msg"></textarea>
+	<p class="pop_submit">
+	<input type="submit" name="Submit" value="<?php _e('Send test mail', 'wp-mail-options'); ?>" />
+	</p>
+	</div>
+	</div>
+	<!-- test end -->
+
 	<!--others-->
 	<!--others end-->
 
-	</div></div></div>
+	</div>
 	<!--right end-->
 
 	<!--left-->
-	<div class="postbox-container" style="float:none;margin-right:320px;">
-	<div class="metabox-holder">
-	<div class="meta-box-sortabless">
+	<div class="pop_main">
 
 	<!--setting-->
-	<div id="wpmo-setting" class="postbox">
-	<h3 class="hndle"><?php _e('Settings', 'wp-mail-options'); ?></h3>
+	<div id="wpmo-setting" class="pop_box pop_round">
+	<h3><?php _e('Settings', 'wp-mail-options'); ?></h3>
+	<div class="pop_box_content">
 	<?php $wp_mail_options = maybe_unserialize(get_option('wp_mail_options')); ?>
 	<form method="post" action="<?php echo get_bloginfo("wpurl"); ?>/wp-admin/options-general.php?page=wp-mail-options">
 	<input type="hidden" name="wpmo_update_options" value="Y">
-	<table class="form-table">
+	<table class="pop_table">
 
 	<tr><th><b><?php _e('PROPERTIES, PUBLIC', 'wp-mail-options'); ?></b></th></tr>
 
@@ -136,13 +182,13 @@ function WPMailOptions_Options_Page() {
 	<br />$Subject           = '';</td></tr>
 
 	<tr><th scope="row"><?php _e('Body', 'wp-mail-options'); ?></th>
-	<td><input type="text" name="wpmo_mail_body" value="<?php echo $wp_mail_options['wpmo_mail_body']; ?>" /></td>
+	<td><textarea cols="30" rows="5" name="wpmo_mail_body"><?php echo $wp_mail_options['wpmo_mail_body']; ?></textarea></td>
 	<td><?php _e('Sets the Body of the message.  This can be either an HTML or text body. If HTML then run IsHTML(true).', 'wp-mail-options'); ?>
 	<br />@var string
 	<br />$Body              = '';</td></tr>
 
 	<tr><th scope="row"><?php _e('Alternative Body', 'wp-mail-options'); ?></th>
-	<td><input type="text" name="wpmo_mail_altbody" value="<?php echo $wp_mail_options['wpmo_mail_altbody']; ?>" /></td>
+	<td><textarea cols="30" rows="5" name="wpmo_mail_altbody"><?php echo $wp_mail_options['wpmo_mail_altbody']; ?></textarea></td>
 	<td><?php _e('Sets the text-only body of the message.  This automatically sets the email to multipart/alternative.  This body can be read by mail clients that do not have HTML email capability such as mutt. Clients that can read HTML will view the normal Body.', 'wp-mail-options'); ?>
 	<br />@var string
 	<br />$AltBody           = '';</td></tr>
@@ -295,7 +341,7 @@ function WPMailOptions_Options_Page() {
 	<td>var $boundary        = array();</td></tr>
 <?php
 /*
-  var $message_type    = '';  
+  var $message_type    = '';
   var $language        = array();
   var $error_count     = 0;
   var $LE              = "\n";
@@ -306,17 +352,18 @@ function WPMailOptions_Options_Page() {
 */
 ?>
 	</table>
-	<p class="submit">
+	<p class="pop_submit">
 	<input type="submit" name="Submit" value="<?php _e('Save Changes', 'wp-mail-options'); ?>" />
 	</p>
 	</form>
+	</div>
 	</div>
 	<!--settin end-->
 
 	<!--others-->
 	<!--others end-->
 
-	</div></div></div>
+	</div>
 	<!--left end-->
 
 	</div>
