@@ -95,6 +95,7 @@ function WPMailOptions_Options_Page() {
 	<p class="pop_submit">
 	<input type="submit" name="Submit" value="<?php _e('Send test mail', 'wp-mail-options'); ?>" />
 	</p>
+	</form>
 	</div>
 	</div>
 	<!-- test end -->
