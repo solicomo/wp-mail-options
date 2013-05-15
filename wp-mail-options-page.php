@@ -15,19 +15,22 @@ if(isset($_POST['wpmo_update_options'])) {
 	}
 }
 
-if(isset($_POST['wpmo_test_mail'])) {
-	if($_POST['wpmo_test_mail'] == 'Y') {
-		if(wp_mail($_POST['wpmo_test_to'], $_POST['wpmo_test_subject'],
-				$_POST['wpmo_test_msg'], $_POST['wpmo_test_headers'])) {
-			$wpmo_status = 'test_success';
-		} else {
-			$wpmo_status = 'test_failed';
+if(!class_exists('WPMailOptionsPage')) {
+class WPMailOptionsPage {
+
+function WPMailOptions_Test_mail() {
+	if(isset($_POST['wpmo_test_mail'])) {
+		if($_POST['wpmo_test_mail'] == 'Y') {
+			if(wp_mail($_POST['wpmo_test_to'], $_POST['wpmo_test_subject'],
+					$_POST['wpmo_test_msg'], $_POST['wpmo_test_headers'])) {
+				$wpmo_status = 'test_success';
+			} else {
+				$wpmo_status = 'test_failed';
+			}
 		}
 	}
 }
 
-if(!class_exists('WPMailOptionsPage')) {
-class WPMailOptionsPage {
 function WPMailOptions_Options_Page() {
 	?>
 	<style>
@@ -123,7 +126,7 @@ function WPMailOptions_Options_Page() {
 	<input type="hidden" name="wpmo_update_options" value="Y">
 	<table class="pop_table">
 
-	<tr><th><h4><?php _e('PROPERTIES, PUBLIC', 'wp-mail-options'); ?></h4></th></tr>
+	<tr><th style="width: 100px;"><h4><?php _e('PROPERTIES, PUBLIC', 'wp-mail-options'); ?></h4></th></tr>
 
 	<tr><td scope="row"><?php _e('Email Priority', 'wp-mail-options'); ?></td>
 	<td><input type="text" name="wpmo_mail_prior" value="<?php echo $wp_mail_options['wpmo_mail_prior']; ?>" /></td>
@@ -182,13 +185,13 @@ function WPMailOptions_Options_Page() {
 	<br />$Subject           = '';</td></tr>
 
 	<tr><td scope="row"><?php _e('Body', 'wp-mail-options'); ?></td>
-	<td><textarea cols="30" rows="5" name="wpmo_mail_body"><?php echo $wp_mail_options['wpmo_mail_body']; ?></textarea></td>
+	<td><textarea cols="15" rows="5" style="width: 153px;" name="wpmo_mail_body"><?php echo $wp_mail_options['wpmo_mail_body']; ?></textarea></td>
 	<td><?php _e('Sets the Body of the message.  This can be either an HTML or text body. If HTML then run IsHTML(true).', 'wp-mail-options'); ?>
 	<br />@var string
 	<br />$Body              = '';</td></tr>
 
 	<tr><td scope="row"><?php _e('Alternative Body', 'wp-mail-options'); ?></td>
-	<td><textarea cols="30" rows="5" name="wpmo_mail_altbody"><?php echo $wp_mail_options['wpmo_mail_altbody']; ?></textarea></td>
+	<td><textarea cols="15" rows="5" style="width: 153px;" name="wpmo_mail_altbody"><?php echo $wp_mail_options['wpmo_mail_altbody']; ?></textarea></td>
 	<td><?php _e('Sets the text-only body of the message.  This automatically sets the email to multipart/alternative.  This body can be read by mail clients that do not have HTML email capability such as mutt. Clients that can read HTML will view the normal Body.', 'wp-mail-options'); ?>
 	<br />@var string
 	<br />$AltBody           = '';</td></tr>

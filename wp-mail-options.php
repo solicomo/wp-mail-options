@@ -24,14 +24,14 @@ class WPMailOptions {
 function is_str_and_not_empty($var) {
 	if (!is_string($var))
 		return false;
-	
+
 	if (empty($var))
 		return false;
-	
+
 	if ($var=='')
 		return false;
-	
-	return true; 
+
+	return true;
 }
 
 function WPMailOptions_PHPMailer_Init(&$mailer) {
@@ -344,7 +344,7 @@ function ActivatePlugin() {
  */
 function DeactivatePlugin() {
 	$optfile = trailingslashit(dirname(__FILE__)) . "options.txt";
-	file_put_contents($optfile, get_option("wp_mail_options"));	
+	file_put_contents($optfile, get_option("wp_mail_options"));
 	delete_option("wp_mail_options");
 }
 
@@ -373,9 +373,11 @@ require_once(trailingslashit(dirname(__FILE__)) . "wp-mail-options-page.php");
 
 if(class_exists('WPMailOptionsPage')) {
 	$wpmailoptions_page = new WPMailOptionsPage();
-	
+
 	if(isset($wpmailoptions_page)) {
 		add_action('admin_menu', array(&$wpmailoptions_page, 'WPMailOptions_Menu'), 1);
+
+		add_action('plugins_loaded', array(&$wpmailoptions_page, 'WPMailOptions_Test_mail'), 1);
 	}
 }
 ?>
