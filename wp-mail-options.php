@@ -75,10 +75,10 @@ function WPMailOptions_PHPMailer_Init(&$mailer) {
 	/**
 	* Holds the most recent mailer error message.
 	* @var string
-	*/
+	* /
 	if($this->is_str_and_not_empty($wp_mail_options['wpmo_mail_error_info']))
 	$phpmailer->ErrorInfo         =$wp_mail_options['wpmo_mail_error_info'];
-
+*/
 	/**
 	* Sets the From email address for the message.
 	* @var string
@@ -377,7 +377,7 @@ if(class_exists('WPMailOptionsPage')) {
 	if(isset($wpmailoptions_page)) {
 		add_action('admin_menu', array(&$wpmailoptions_page, 'WPMailOptions_Menu'), 1);
 
-		add_action('plugins_loaded', array(&$wpmailoptions_page, 'WPMailOptions_Test_mail'), 1);
+		add_action('plugins_loaded', array(&$wpmailoptions_page, 'WPMailOptions_TestMail'), 1);
 	}
 }
 ?>

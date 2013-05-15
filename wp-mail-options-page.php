@@ -18,13 +18,19 @@ if(isset($_POST['wpmo_update_options'])) {
 if(!class_exists('WPMailOptionsPage')) {
 class WPMailOptionsPage {
 
-function WPMailOptions_Test_mail() {
+function WPMailOptions_TestMail() {
+	global $wpmo_status;
+	echo '1';
 	if(isset($_POST['wpmo_test_mail'])) {
+		echo '2';
 		if($_POST['wpmo_test_mail'] == 'Y') {
+			echo '3';
 			if(wp_mail($_POST['wpmo_test_to'], $_POST['wpmo_test_subject'],
 					$_POST['wpmo_test_msg'], $_POST['wpmo_test_headers'])) {
+				echo '4';
 				$wpmo_status = 'test_success';
 			} else {
+				echo '5';
 				$wpmo_status = 'test_failed';
 			}
 		}
