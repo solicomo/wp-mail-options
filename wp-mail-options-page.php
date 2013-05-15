@@ -109,6 +109,34 @@ function WPMailOptions_Options_Page() {
 	</div>
 	<!-- test end -->
 
+	<!-- donate -->
+	<div id="wpmo-donate" class="pop_box pop_round">
+	<h3><?php _e('Donate', 'wp-mail-options'); ?></h3>
+	<div class="pop_box_content">
+	<center>
+	<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+		<input type="hidden" name="cmd" value="_xclick">
+		<input type="hidden" name="business" value="soli@cbug.org">
+		<input type="hidden" name="item_name" value="Support WP Mail Options">
+		<input type="hidden" name="amount" value="">
+		<input type="hidden" name="currency_code" value="USD">
+		<input type="image" src="https://www.paypal.com/en_US/i/btn/btn_donate_LG.gif" border="0"  style="border:0px;background:none;" name="submit" alt="PayPal - The safer, easier way to pay online">
+	</form>
+	</center>
+	<br />
+	<center>
+	<form  method="post" action="https://www.okpay.com/process.html">
+	  <input type="hidden" name="ok_receiver" value="OK164083721"/>
+ 	  <input type="hidden" name="ok_item_1_name" value="Support WP Mail Options"/>
+ 	  <input type="hidden" name="ok_item_1_price" value=""/>
+ 	  <input type="hidden" name="ok_currency" value="USD"/>
+ 	  <input type="image" name="submit" style="border:0px;background:none;" alt="OKPAY  - The safer, easier way to pay online" src="https://www.okpay.com/img/buttons/en/donate/d09o145x42en.png"/>
+	</form>
+	</center>
+	</div>
+	</div>
+	<!-- donate end -->
+
 	<!--others-->
 	<!--others end-->
 
