@@ -78,16 +78,6 @@ function WPMailOptions_Options_Page() {
 	<!--right-->
 	<div class="pop_sidebar">
 
-	<!--about-->
-	<div id="wpmo-about" class="pop_box pop_round">
-	<h3><?php _e('About this plugin', 'wp-mail-options'); ?></h3>
-	<div class="pop_box_content"><ul>
-	<li><a href="http://wordpress.org/extend/plugins/wp-mail-options/"><?php _e('Plugin URI', 'wp-mail-options'); ?></a></li>
-	<li><a href="http://www.cbug.org" target="_blank"><?php _e('Author URI', 'wp-mail-options'); ?></a></li>
-	</ul></div>
-	</div>
-	<!--about end-->
-
 	<!-- test -->
 	<div id="wpmo-test" class="pop_box pop_round">
 	<h3><?php _e('Send test mail', 'wp-mail-options'); ?></h3>
@@ -108,6 +98,16 @@ function WPMailOptions_Options_Page() {
 	</div>
 	</div>
 	<!-- test end -->
+
+	<!--about-->
+	<div id="wpmo-about" class="pop_box pop_round">
+	<h3><?php _e('About this plugin', 'wp-mail-options'); ?></h3>
+	<div class="pop_box_content"><ul>
+	<li><a href="http://wordpress.org/extend/plugins/wp-mail-options/"><?php _e('Plugin URI', 'wp-mail-options'); ?></a></li>
+	<li><a href="http://www.cbug.org" target="_blank"><?php _e('Author URI', 'wp-mail-options'); ?></a></li>
+	</ul></div>
+	</div>
+	<!--about end-->
 
 	<!-- donate -->
 	<div id="wpmo-donate" class="pop_box pop_round">
