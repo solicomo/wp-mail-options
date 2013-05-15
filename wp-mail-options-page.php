@@ -20,17 +20,12 @@ class WPMailOptionsPage {
 
 function WPMailOptions_TestMail() {
 	global $wpmo_status;
-	echo '1';
 	if(isset($_POST['wpmo_test_mail'])) {
-		echo '2';
 		if($_POST['wpmo_test_mail'] == 'Y') {
-			echo '3';
 			if(wp_mail($_POST['wpmo_test_to'], $_POST['wpmo_test_subject'],
 					$_POST['wpmo_test_msg'], $_POST['wpmo_test_headers'])) {
-				echo '4';
 				$wpmo_status = 'test_success';
 			} else {
-				echo '5';
 				$wpmo_status = 'test_failed';
 			}
 		}
@@ -132,7 +127,7 @@ function WPMailOptions_Options_Page() {
 	<input type="hidden" name="wpmo_update_options" value="Y">
 	<table class="pop_table">
 
-	<tr><th style="width: 100px;"><h4><?php _e('PROPERTIES, PUBLIC', 'wp-mail-options'); ?></h4></th></tr>
+	<tr><td style="width: 150px;"><h4><?php _e('PROPERTIES, PUBLIC', 'wp-mail-options'); ?></h4></td></tr>
 
 	<tr><td scope="row"><?php _e('Email Priority', 'wp-mail-options'); ?></td>
 	<td><input type="text" name="wpmo_mail_prior" value="<?php echo $wp_mail_options['wpmo_mail_prior']; ?>" /></td>
@@ -251,7 +246,7 @@ function WPMailOptions_Options_Page() {
 	<br />$MessageID         = '';</td></tr>
 
 
-	<tr><th><h4><?php _e('PROPERTIES FOR SMTP', 'wp-mail-options'); ?></h4></th></tr>
+	<tr><td><h4><?php _e('PROPERTIES FOR SMTP', 'wp-mail-options'); ?></h4></td></tr>
 
 	<tr><td scope="row"><?php _e('SMTP Host', 'wp-mail-options'); ?></td>
 	<td><input type="text" name="wpmo_mail_smtp_host" value="<?php echo $wp_mail_options['wpmo_mail_smtp_host']; ?>" /></td>
@@ -319,7 +314,7 @@ function WPMailOptions_Options_Page() {
 	<br />@var bool
 	<br />$SingleTo = false;</td></tr>
 
-	<tr><th><h4><?php _e('PROPERTIES, PRIVATE', 'wp-mail-options'); ?></h4></th></tr>
+	<tr><td><h4><?php _e('PROPERTIES, PRIVATE', 'wp-mail-options'); ?></h4></td></tr>
 
 	<tr><td scope="row"><?php _e('To', 'wp-mail-options'); ?></td>
 	<td><input type="text" name="wpmo_mail_to" value="<?php echo $wp_mail_options['wpmo_mail_to']; ?>" /></td>

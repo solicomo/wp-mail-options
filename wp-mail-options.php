@@ -377,6 +377,13 @@ if(class_exists('WPMailOptionsPage')) {
 	if(isset($wpmailoptions_page)) {
 		add_action('admin_menu', array(&$wpmailoptions_page, 'WPMailOptions_Menu'), 1);
 
+		/*
+		 * wp_mail() is defined in wp-includes/pluggable.php.
+		 * This file is loaded after the plugins are loaded,
+		 * but before the hook plugins_loaded has been fired.
+		 *
+		 * So, we need this trick to send test mail using wp_mail().
+		 * */
 		add_action('plugins_loaded', array(&$wpmailoptions_page, 'WPMailOptions_TestMail'), 1);
 	}
 }
