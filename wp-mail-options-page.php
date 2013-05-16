@@ -366,8 +366,11 @@ function WPMailOptions_Options_Page() {
 	<td>var $attachment      = array();</td></tr>
 
 	<tr><td scope="row"><?php _e('Custom Header', 'wp-mail-options'); ?></td>
-	<td><input type="text" name="wpmo_mail_custom_header" value="<?php echo $wp_mail_options['wpmo_mail_custom_header']; ?>" /></td>
-	<td>var $CustomHeader    = array();</td></tr>
+	<td><textarea cols="15" rows="5" style="width: 153px;" name="wpmo_mail_custom_header"><?php echo $wp_mail_options['wpmo_mail_custom_header']; ?></textarea></td>
+	<td>var $CustomHeader    = array();
+	<br /><?php _e('For example:', 'wp-mail-options'); ?>
+	<br />Name1:Value1
+	<br />Name2:Value2</td></tr>
 
 	<tr><td scope="row"><?php _e('Boundary', 'wp-mail-options'); ?></td>
 	<td><input type="text" name="wpmo_mail_boundary" value="<?php echo $wp_mail_options['wpmo_mail_boundary']; ?>" /></td>
