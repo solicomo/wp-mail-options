@@ -408,7 +408,7 @@ function WPMailOptions_Options_Page() {
 }
 
 function WPMailOptions_Menu() {
-	add_options_page(__('WP Mail Options'), __('WP Mail Options'), 'manage_options', 'wp-mail-options', array(__CLASS__,'WPMailOptions_Options_Page'));
+	add_options_page(__('WP Mail Options'), __('WP Mail Options'), 'manage_options', 'wp-mail-options', array($this,'WPMailOptions_Options_Page'));
 }
 
 } // end of class WPMailOptions

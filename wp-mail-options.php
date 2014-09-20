@@ -3,7 +3,7 @@
 Plugin Name: WP Mail Options
 Plugin URI: http://wordpress.org/extend/plugins/wp-mail-options/
 Description: This plugin allows you to set almost all options of emails sent by WordPress. In fact, it just simply modified the value of the PHPMailer's member variables. Warning: This plugin is only for advanced users. You should know exactly what effect each option will have on the behavior of PHPMailer when you use this plugin.
-Version: 0.2.2
+Version: 0.2.3
 Author: Soli
 Author URI: http://www.cbug.org
 Text Domain: wp-mail-options
@@ -298,7 +298,7 @@ function WPMailOptions_PHPMailer_Init(&$mailer) {
 
 	if($this->is_str_and_not_empty($wp_mail_options['wpmo_mail_custom_header'])) {
 		$tempheaders = explode( "\n", str_replace( "\r\n", "\n", $wp_mail_options['wpmo_mail_custom_header'] ) );
-		
+
 		if ( !empty( $tempheaders ) ) {
 			foreach ( (array) $tempheaders as $header ) {
 				$phpmailer->AddCustomHeader($header);
