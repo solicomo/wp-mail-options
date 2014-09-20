@@ -332,7 +332,7 @@ function RegisterPluginLinks($links, $file) {
 	$base = plugin_basename(__FILE__);
 	if ($file ==$base) {
 		$links[] = '<a href="options-general.php?page=wp-mail-options">' . __('Settings','wp-mail-options') . '</a>';
-		$links[] = '<a href="http://www.cbug.org/category/wp-mail-options">' . __('FAQ','wp-mail-options') . '</a>';
+		$links[] = '<a href="http://www.cbug.org/tag/wp-mail-options">' . __('FAQ','wp-mail-options') . '</a>';
 	}
 	return $links;
 }
