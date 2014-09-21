@@ -413,4 +413,4 @@ function WPMailOptions_Menu() {
 
 } // end of class WPMailOptions
 } // end of if(!class_exists('WPMailOptions'))
-?>
+

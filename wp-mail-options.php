@@ -394,4 +394,4 @@ if(class_exists('WPMailOptionsPage')) {
 		add_action('plugins_loaded', array(&$wpmailoptions_page, 'WPMailOptions_TestMail'), 1);
 	}
 }
-?>
+
